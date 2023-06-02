@@ -1,5 +1,11 @@
 
 import express, { ErrorRequestHandler, json } from "express";
+
+process.on('uncaughtException', (err, origin) => {
+	console.error(origin, err);
+});
+
+
 import { userRouter } from "./routes/users";
 const app = express();
 
